@@ -10,6 +10,12 @@ import play.api.mvc._
  */
 @Singleton
 class HomeController @Inject() extends Controller {
+    
+    
+  def main = Action {
+    Ok(views.html.main())
+  }
+    
 
   /**
    * Create an Action to render an HTML page with a welcome message.
@@ -17,8 +23,8 @@ class HomeController @Inject() extends Controller {
    * will be called when the application receives a `GET` request with
    * a path of `/`.
    */
-  def index = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def example = Action {
+    Ok(views.html.example("Your new application is ready."))
   }
 
 }

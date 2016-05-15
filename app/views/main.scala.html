@@ -1,7 +1,8 @@
 @*
  * This template displays the (landing) feed.
- * Takes no parameters.
+ * Takes a list of posts to display.
  *@
+ @(posts: List[String])
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,5 +14,8 @@
     </head>
     <body>
         <span id="logo">distilledfeed</span>
+        @for(p <- posts) {
+            <li>@p</li>
+        }
     </body>
 </html>

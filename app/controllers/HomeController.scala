@@ -13,7 +13,8 @@ class HomeController @Inject() extends Controller {
     
     
   def main = Action {
-    Ok(views.html.main())
+    val posts = List("linkOne", "linkTwo", "linkThree")
+    Ok(views.html.main(posts))
   }
     
 

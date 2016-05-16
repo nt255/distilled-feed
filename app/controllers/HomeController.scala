@@ -1,8 +1,12 @@
 package controllers
 
+import scala.collection.JavaConversions
+
 import javax.inject._
 import play.api._
 import play.api.mvc._
+
+import utils.TestUtil
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
@@ -13,7 +17,8 @@ class HomeController @Inject() extends Controller {
     
     
   def main = Action {
-    val posts = List("linkOne", "linkTwo", "linkThree")
+    //val posts = List("linkOne", "linkTwo", "linkThree")
+    val posts = JavaConversions.asScalaBuffer(TestUtil.generateList()).toList
     Ok(views.html.main(posts))
   }
     
